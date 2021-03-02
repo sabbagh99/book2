@@ -1,0 +1,19 @@
+
+
+
+    <form action="/books/<%=data[0].id %>?_method=PUT" method="POST" >
+        <div  class="modal-content">
+            
+            <input class="update1" type="text" placeholder="title" name="search-que" value="<%= data[0].title%>">
+            <input class="update2" type="text" placeholder="author" name="search-que" value="<%= data[0].author%>">
+            <input  type="text" placeholder="image" name="search-que" value="<%=data[0].image_url%>" hidden >
+            <input class="update3" type="text" placeholder="description" name="search-que"
+                value="<%= data[0].description%>">
+
+            <button class="la" type="submit">Update Book</button>
+        </div>
+    </form>
+
+
+
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('../../layout/head.ejs') %>
+
+<body class="body">
+
+    <%- include ('../../layout/header.ejs') %>
+
+    <main class="display">
+        <form action="/searches" method="POST">
+            <div class="display-dev">
+                <input class="place" type="text" placeholder="Enter title or author" name="search-que">
+                <label for="title">
+                    Title
+                    <input type="radio" name="searching-by" value="title">
+                </label>
+                <label for="author">
+                    Author
+                    <input type="radio" name="searching-by"  value="author">
+                </label>
+                <input  class="submit" type="submit" value="Submit">
+            </div>
+        </form>
+    </main>
+</body>
+</html>

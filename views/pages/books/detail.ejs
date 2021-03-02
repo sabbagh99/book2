@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('../../layout/head.ejs') %>
+
+
+
+    <body>
+        <section class='cards'>
+            <% data.forEach(ele=>{%>
+                <div class='card'>
+                    <img class='card-img' src=<%=ele.image_url%> alt="">
+                    <h3 class="card-title">
+                        <%= ele.title%>
+                    </h3>
+                    <br>
+                    <h5 class="card-auther">
+                        <%= ele.author%>
+                    </h5>
+                    <br>
+                    <p class="card-des" style="visibility: <%= isVisDis%>;">
+                        <%- ele.description%>
+                    </p>
+                    <a href="/books/<%= ele.id%>">
+                        <button class="home-detalis" style='visibility: <%= isVis%>;'>
+                            View Details
+                        </button>
+                    </a>
+                    <div class="divb">
+                        <button class="button2" id="myBtn" style="visibility: <%= isVisDis%>;">Update Book</button>
+
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal">
+
+                            <%- include ('./edit.ejs') %>
+
+                        </div>
+                        <form action="/books/<%=data[0].id %>?_method=DELETE" method="POST"
+                            style="visibility: <%= isVisDis%>;">
+                            <button class="button">Delete Book</button>
+                    </div>
+                    </form>
+                </div>
+                <%})%>
+
+
+
+                    <script>
+                        // Get the modal
+                        var modal = document.getElementById("myModal");
+
+                        // Get the button that opens the modal
+                        var btn = document.getElementById("myBtn");
+
+                        // Get the <span> element that closes the modal
+                        var span = document.getElementsByClassName("close")[0];
+
+                        // When the user clicks the button, open the modal 
+                        btn.onclick = function () {
+                            modal.style.display = "block";
+                        }
+
+                        // When the user clicks on <span> (x), close the modal
+                        span.onclick = function () {
+                            modal.style.display = "none";
+                        }
+
+                        // When the user clicks anywhere outside of the modal, close it
+                        window.onclick = function (event) {
+                            if (event.target == modal) {
+                                modal.style.display = "none";
+                            }
+                        }
+                    </script>
+        </section>

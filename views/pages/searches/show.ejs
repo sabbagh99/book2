@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include ('../../layout/head.ejs') %>
+<body>
+    <%- include ('../../layout/header.ejs') %>
+
+    <main>
+        
+        <div class='cards'>
+            <% data.forEach(ele=>{%>
+                <div class = 'card'>
+                    <img class = 'card-img'src=<%=ele.image_url%> alt="">
+                    <h3 class="card-title">
+                        <%= ele.title%>
+                    </h3>
+                    <br>
+                    <h5 class="card-auther">
+                        <%= ele.author%>
+                    </h5>
+                    <br>
+                    <form action="/books" method="POST">
+                        <input type="text" style="visibility: hidden;" name ='image_url'value = 
+                        <%=ele.image_url %>>
+                        <input type="text"  style="visibility: hidden;" name ='title' value= '<%= ele.title %>' >
+                        <input type="text"  style="visibility: hidden;" name ='author' value= '<%= ele.author %>' >
+                        <input type="text"  style="visibility: hidden;"  name="description" value = '<%= ele.description %>' >
+                        <input class="margin" type="submit" value="Select this Book">
+                    </form>
+                </div>
+                <%})%>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>

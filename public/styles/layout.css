@@ -1,0 +1,66 @@
+.cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+}
+.card{
+  background-color: #d8d8d8;
+  margin: 5%;
+  margin-bottom: 4%;
+  padding: 10%;
+  box-shadow:#7a7a7a 2px 2px 2px 2px;
+  border-radius: 10px;
+
+
+}
+.card-auther{
+  font-style: italic;
+  margin-top: 2%;
+  color: #7a7a7a;
+}
+.card-img{
+  width: 200px;
+  height: 250px;
+}
+.card-title{
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  text-shadow: black 2px 2px;
+}
+
+.card-des{
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+  background-color: hsl(0, 0%, 90%);
+    color: black;
+    padding: 20px;
+
+
+}
+
+@media (min-width: 580px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .header1{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: 30px;
+    text-align: left;
+}
+.header2{
+    background-color:hsl(0deg 0% 29%);
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    padding: 12px;
+    text-align: center;
+}
+
+}
+
+@media (min-width: 900px) {
+  .cards { grid-template-columns: repeat(3, 1fr); }
+}
